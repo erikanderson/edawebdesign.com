@@ -13,8 +13,8 @@ stderr_path "/home/deploy/edawebdesign/current/log/unicorn.log"
 stdout_path "/home/deploy/edawebdesign/current/log/unicorn.log"
 
 # Unicorn socket
-listen "/tmp/unicorn.[app name].sock"
-listen "/tmp/unicorn.myapp.sock"
+listen "/tmp/unicorn.edawebdesign.sock"
+listen "/tmp/unicorn.edawebdesign.sock"
 
 # Number of processes
 # worker_processes 4
