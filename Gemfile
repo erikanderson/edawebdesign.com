@@ -38,10 +38,6 @@ gem 'unicorn'
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-gem 'capistrano',  '~> 3.1'
-gem 'capistrano-rails', group: :development
-
-
 gem 'bootstrap-sass', '~> 3.3.0'
 gem 'autoprefixer-rails'
 
