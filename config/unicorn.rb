@@ -14,7 +14,7 @@ stdout_path "/home/deploy/edawebdesign/current/log/unicorn.log"
 
 # Unicorn socket
 listen "/tmp/unicorn.edawebdesign.sock"
-listen "/tmp/unicorn.edawebdesign.sock"
+listen "/tmp/unicorn.myapp.sock"
 
 # Number of processes
 # worker_processes 4
