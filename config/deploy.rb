@@ -1,7 +1,7 @@
 require 'mina/bundler'
 require 'mina/rails'
 require 'mina/git'
-# require 'mina/rbenv'  # for rbenv support. (http://rbenv.org)
+require 'mina/rbenv'  # for rbenv support. (http://rbenv.org)
 # require 'mina/rvm'    # for rvm support. (http://rvm.io)
 
 # Basic settings:
@@ -32,7 +32,7 @@ set :shared_paths, ['config/database.yml', 'config/application.yml']
 task :environment do
   # If you're using rbenv, use this to load the rbenv environment.
   # Be sure to commit your .rbenv-version to your repository.
-  # invoke :'rbenv:load'
+  invoke :'rbenv:load'
 
   # For those using RVM, use this to load an RVM version@gemset.
   # invoke :'rvm:use[ruby-1.9.3-p125@default]'
@@ -59,10 +59,10 @@ task :deploy => :environment do
     # instance of your project.
     invoke :'git:clone'
     invoke :'deploy:link_shared_paths'
-    #invoke :'bundle:install'
-    #invoke :'rails:db_migrate'
-    #invoke :'rails:assets_precompile'
-    #invoke :'deploy:cleanup'
+    invoke :'bundle:install'
+    invoke :'rails:db_migrate'
+    invoke :'rails:assets_precompile'
+    invoke :'deploy:cleanup'
 
     to :launch do
       queue "mkdir -p #{deploy_to}/#{current_path}/tmp/"
