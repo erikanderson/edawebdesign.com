@@ -15,6 +15,7 @@ set :deploy_to, '/home/deploy/edawebdesign'
 set :repository, 'git@github.com:erikanderson/edawebdesign.com.git'
 set :branch, 'master'
 
+set :rails_env, 'production'
 # For system-wide RVM install.
 #   set :rvm_path, '/usr/local/rvm/bin/rvm'
 
