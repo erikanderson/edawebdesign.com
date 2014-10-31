@@ -50,5 +50,8 @@ gem 'simple_form'
 
 gem "figaro"
 
+gem 'mina'
 
+gem 'mina-sidekiq', :require => false
+gem 'mina-unicorn', :require => false
 
