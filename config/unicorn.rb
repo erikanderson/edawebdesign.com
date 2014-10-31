@@ -8,7 +8,7 @@ preload_app true
 timeout 30
 
 # Fill path to your app
-working_directory app_dir
+working_directory "home/deploy/edawebdesign/current/"
 
 # Set up socket location
 listen "#{shared_dir}/sockets/unicorn.sock", :backlog => 64

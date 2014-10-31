@@ -24,7 +24,7 @@ set :rails_env, 'production'
 set :shared_paths, ['config/database.yml', 'config/application.yml', 'config/secrets.yml']
 
 # Optional settings:
-   set :user, 'deploy'    # Username in the server to SSH to.
+set :user, 'deploy'    # Username in the server to SSH to.
 #   set :port, '30000'     # SSH port number.
 #   set :forward_agent, true     # SSH forward_agent.
 
@@ -68,6 +68,7 @@ task :deploy => :environment do
     to :launch do
       queue "mkdir -p #{deploy_to}/#{current_path}/tmp/"
       queue "touch #{deploy_to}/#{current_path}/tmp/restart.txt"
+      invoke :'unicorn:restart'
     end
   end
 end
