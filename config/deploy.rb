@@ -1,16 +1,16 @@
 require 'mina/bundler'
 require 'mina/rails'
 require 'mina/git'
-require 'mina/rbenv'  # for rbenv support. (http://rbenv.org)
+#require 'mina/rbenv'  # for rbenv support. (http://rbenv.org)
 # require 'mina/rvm'    # for rvm support. (http://rvm.io)
-require 'mina/unicorn'
+
 # Basic settings:
 #   domain       - The hostname to SSH to.
 #   deploy_to    - Path to deploy into.
 #   repository   - Git repo to clone from. (needed by mina/git)
 #   branch       - Branch name to deploy. (needed by mina/git)
 
-set :domain, '66.228.45.100'
+set :domain, '104.131.99.39'
 set :deploy_to, '/home/deploy/edawebdesign'
 set :repository, 'git@github.com:erikanderson/edawebdesign.com.git'
 set :branch, 'master'
@@ -33,7 +33,7 @@ set :user, 'deploy'    # Username in the server to SSH to.
 task :environment do
   # If you're using rbenv, use this to load the rbenv environment.
   # Be sure to commit your .rbenv-version to your repository.
-  invoke :'rbenv:load'
+  # invoke :'rbenv:load'
 
   # For those using RVM, use this to load an RVM version@gemset.
   # invoke :'rvm:use[ruby-1.9.3-p125@default]'
@@ -68,7 +68,6 @@ task :deploy => :environment do
     to :launch do
       queue "mkdir -p #{deploy_to}/#{current_path}/tmp/"
       queue "touch #{deploy_to}/#{current_path}/tmp/restart.txt"
-      #invoke :'unicorn:restart'
     end
   end
 end
